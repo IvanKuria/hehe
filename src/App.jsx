@@ -17,18 +17,18 @@ function App() {
   const [isInitial, setIsInitial] = useState(true);
 
   const yesFinalResponse = [
-    "../assets/Clap Smile GIF by SZA.gif",
-    "../assets/Cats Happy Cat GIF.gif",
-    "../assets/Cat Love GIF.gif",
-    "../assets/Dance Dance Wait GIF.gif"
-  ]
+    "/assets/Clap Smile GIF by SZA.gif",
+    "/assets/Cats Happy Cat GIF.gif",
+    "/assets/Cat Love GIF.gif",
+    "/assets/Dance Dance Wait GIF.gif"
+  ];
 
   const randomGifs = [
-    "../assets/Angry Cat GIF.gif",
-    "../assets/angry cat GIF (1).gif",
-    "../assets/Sad Kitten GIF.gif",
-    "../assets/come on please GIF by SZA.gif",
-  ]
+    "/assets/Angry Cat GIF.gif",
+    "/assets/angry cat GIF (1).gif",
+    "/assets/Sad Kitten GIF.gif",
+    "/assets/come on please GIF by SZA.gif"
+  ];
 
   // Handles the no action: gets a random question and replaces it with the header
   const handleNoClick = () => {
@@ -41,11 +41,9 @@ function App() {
     setIsInitial(false);
   };
 
-  
-
   // Handles the yes button click and changes the text
   const handleYesClick = () => {
-    const randomYesGif= Math.floor(Math.random() * yesFinalResponse.length);
+    const randomYesGif = Math.floor(Math.random() * yesFinalResponse.length);
     setRandomYesImage(yesFinalResponse[randomYesGif]);
     setIsYes(true);
     setIsNo(false);
@@ -57,17 +55,17 @@ function App() {
       <div className="overall-container">
         {isInitial ? (
           <>
-            <img src="../assets/cat_dancing.gif" alt="Cat Dancing"></img>
+            <img src="/assets/cat_dancing.gif" alt="Cat Dancing" />
             <h1>Are you free next Saturday?</h1>
           </>
         ) : isNo ? (
           <>
-            <img src={randomNoImage}></img>
+            <img src={randomNoImage} alt="Random No Response" />
             <h1>{randomQuestion}</h1>
-          </> 
+          </>
         ) : isYes ? (
           <>
-            <img src={randomYesImage}></img>
+            <img src={randomYesImage} alt="Random Yes Response" />
             <h1>Yay! See you then!</h1>
           </>
         ) : null}
