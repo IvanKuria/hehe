@@ -10,17 +10,19 @@ function App() {
   ];
 
   const yesFinalResponse = [
-    "/assets/Clap Smile GIF by SZA.gif",
-    "/assets/Cats Happy Cat GIF.gif",
-    "/assets/Cat Love GIF.gif",
-    "/assets/Dance Dance Wait GIF.gif"
+    "/assets/wolf STICKER by imoji (1).gif",
+    "/assets/GIF by Riks grill.gif",
+    "/assets/Cat Vibing Sticker.gif",
+    "/assets/Cat Meme Sticker by Brime.gif",
+    "/assets/Sticker ねこ Sticker by Japan (2).gif"
   ];
-
+  
   const randomGifs = [
-    "/assets/Angry Cat GIF.gif",
-    "/assets/angry cat GIF (1).gif",
-    "/assets/Sad Kitten GIF.gif",
-    "/assets/come on please GIF by SZA.gif"
+    "/assets/wolf STICKER by imoji.gif",
+    "/assets/Angry Illustration Sticker by Batuhan Kindil.gif",
+    "/assets/Sticker ねこ Sticker by Japan.gif",
+    "/assets/Sticker ねこ Sticker by Japan (1).gif",
+    "/assets/Happy Cats Sticker.gif"
   ];
 
   const [randomQuestion, setRandomQuestion] = useState(null);
@@ -33,7 +35,7 @@ function App() {
   // Preload images
   useEffect(() => {
     preloadImages([...yesFinalResponse, ...randomGifs, "/assets/cat_dancing.gif"]);
-  }, []);
+  }, [randomGifs, yesFinalResponse]);
 
   const preloadImages = (imageArray) => {
     imageArray.forEach((src) => {
@@ -64,8 +66,9 @@ function App() {
     <div className="overall-container">
       {isInitial ? (
         <>
-          <img src="/assets/cat_dancing.gif" alt="Cat Dancing" />
-          <h1>Are you free next Saturday?</h1>
+          <img className="mariela" src="/assets/mariela.jpeg" alt="Mariela" />
+          <h1>Are you Mariela?</h1>
+          <h2>Codename: Alpha 🐺?</h2>
         </>
       ) : isNo ? (
         <>
@@ -75,12 +78,12 @@ function App() {
       ) : isYes ? (
         <>
           <img src={randomYesImage} alt="Random Yes Response" />
-          <h1>Yay! See you then!</h1>
+          <h1>Welcome to the pack 🐺</h1>
         </>
       ) : null}
       <div className="button-28">
-        <button role="button" onClick={handleYesClick}>Yes</button>
-        <button role="button" onClick={handleNoClick}>No</button>
+        <button className="yes-button" role="button" onClick={handleYesClick}>Yes</button>
+        <button className="no-button" role="button" onClick={handleNoClick}>No</button>
       </div>
     </div>
   );

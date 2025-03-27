@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(255, 207, 157);
+  background-color: palevioletred;
 }
 
 .overall-container{
@@ -10,16 +10,34 @@ body{
 }
 
 /* Gif Attributes */
+
 img{
-  padding-top: 60px;
+  margin-top: 60px;
   height: 300px;
   width: 300px;
 }
 
+.mariela {
+  height: 300px;
+  width: 300px;
+}
+
+.overall-container .mariela {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
 h1{
-  color: rgb(222, 143, 95);
+  color: black;
   font-family: "JetBrains Mono";
   font-size: 25px;
+}
+
+h2{
+  color: black;
+  font-family: "JetBrains Mono";
+  font-size: 20px;
 }
 
 /* Button Container */
@@ -73,4 +91,20 @@ h1{
 .button-28 button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+/* Yes button hover */
+.button-28 .yes-button:hover {
+  background-color: #4CAF50; /* green */
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+/* No button hover */
+.button-28 .no-button:hover {
+  background-color: #F44336; /* red */
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
 }
